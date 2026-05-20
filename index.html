@@ -258,6 +258,36 @@ footer { background: #060F1D; padding: 1.2rem 6%; }
 .industry-tag::before { content: ''; width: 5px; height: 5px; border-radius: 50%; background: var(--accent); flex-shrink: 0; opacity: 0.5; }
 .industry-tag:hover { border-color: var(--accent); color: var(--blue); background: #f0f8ff; }
 
+
+@media (max-width: 768px) {
+  /* 1. Stat band: single centered column, no uneven wrap */
+  #stat-band .stat-band-inner { flex-direction: column; }
+  #stat-band .sb-item { flex: none; width: 100%; border-right: none; border-bottom: 1px solid rgba(255,255,255,0.07); padding: 1.4rem 6%; }
+  #stat-band .sb-item:last-child { border-bottom: none; }
+  #stat-band .sb-sep { display: none; }
+
+  /* 2. Three lenses: single column so all 3 cards show */
+  #lenses .lenses-grid { display: flex !important; flex-direction: column !important; }
+  #lenses .lens-col { border-right: none !important; border-bottom: 1px solid var(--border); }
+  #lenses .lens-col:last-child { border-bottom: none; }
+
+  /* 3. Flow bar: vertical, arrows centered with proper spacing */
+  .services-flow { flex-direction: column; }
+  .flow-step { width: 100%; text-align: center !important; border-right: none; padding: 1.2rem 1.8rem 0; }
+  .flow-step::after { content: "↓"; position: static; display: block; text-align: center; margin: 1rem auto 0; transform: none; font-size: 1.1rem; line-height: 1; }
+  .flow-step:last-child { padding-bottom: 1.2rem; }
+  .flow-step:last-child::after { display: none; }
+
+  /* 4. Contact title: keep same size, just replace "and" with & in HTML */
+
+
+  /* Credentials: stretch to fill full width, keep original font size */
+  .credentials { gap: 0.4rem; flex-wrap: nowrap; }
+  .cred-tag { flex: 1; text-align: center; padding: 0.35rem 0.3rem; }
+
+  /* 5. Experience tags: increase padding so cells are wider, reduce letter-spacing to gain width */
+  #who .industry-tag { padding: 0.75rem 0.6rem; letter-spacing: 0.01em; font-size: 0.78rem; }
+}
 </style>
 </head>
 <body>
@@ -340,18 +370,18 @@ footer { background: #060F1D; padding: 1.2rem 6%; }
       <h2 class="section-title" style="margin-bottom: 1rem;">Three Distinct Lenses</h2>
       <p style="font-family: 'Cormorant Garamond', serif; font-size: clamp(1.15rem, 2vw, 1.5rem); font-weight: 300; color: var(--text-mid); line-height: 1.4; font-style: italic;">Most Consultants Bring One Lens to the Table. We Bring Three.</p>
     </div>
-    <div class="reveal" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border: 1px solid var(--border); border-radius: 8px; overflow: hidden; margin-bottom: 2rem;">
-      <div style="background: white; padding: 2.4rem; border-right: 1px solid var(--border); text-align: center; transition: background 0.3s;" onmouseenter="this.style.background='#f8fbff'" onmouseleave="this.style.background='white'">
+    <div class="reveal lenses-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border: 1px solid var(--border); border-radius: 8px; overflow: hidden; margin-bottom: 2rem;">
+      <div style="background: white; padding: 2.4rem; border-right: 1px solid var(--border); text-align: center; transition: background 0.3s;" onmouseenter="this.style.background='#f8fbff'" onmouseleave="this.style.background='white'" class="lens-col">
         <div style="font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-weight: 400; color: var(--navy); margin-bottom: 0.6rem; line-height: 1.2;">Auditor's Eye</div>
         <div style="width: 32px; height: 2px; background: var(--accent); margin: 0 auto 0.8rem;"></div>
         <div style="font-size: 0.75rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-muted);">Deloitte Senior Auditor</div>
       </div>
-      <div style="background: white; padding: 2.4rem; border-right: 1px solid var(--border); text-align: center; transition: background 0.3s;" onmouseenter="this.style.background='#f8fbff'" onmouseleave="this.style.background='white'">
+      <div style="background: white; padding: 2.4rem; border-right: 1px solid var(--border); text-align: center; transition: background 0.3s;" onmouseenter="this.style.background='#f8fbff'" onmouseleave="this.style.background='white'" class="lens-col">
         <div style="font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-weight: 400; color: var(--navy); margin-bottom: 0.6rem; line-height: 1.2;">Industry Know-How</div>
         <div style="width: 32px; height: 2px; background: var(--accent); margin: 0 auto 0.8rem;"></div>
         <div style="font-size: 0.75rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-muted);">Senior Financial Analyst</div>
       </div>
-      <div style="background: white; padding: 2.4rem; text-align: center; transition: background 0.3s;" onmouseenter="this.style.background='#f8fbff'" onmouseleave="this.style.background='white'">
+      <div style="background: white; padding: 2.4rem; text-align: center; transition: background 0.3s;" onmouseenter="this.style.background='#f8fbff'" onmouseleave="this.style.background='white'" class="lens-col">
         <div style="font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-weight: 400; color: var(--navy); margin-bottom: 0.6rem; line-height: 1.2;">Founder's Reality</div>
         <div style="width: 32px; height: 2px; background: var(--accent); margin: 0 auto 0.8rem;"></div>
         <div style="font-size: 0.75rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-muted);">Startup Co-Founder</div>
@@ -472,7 +502,7 @@ footer { background: #060F1D; padding: 1.2rem 6%; }
   <div class="contact-inner">
     <div class="contact-top reveal">
       <div class="section-label">Let's Talk</div>
-      <h2 class="section-title">Ready to Close the Gap and<br><em style="color:var(--accent-light);">Unlock the Next Level?</em></h2>
+      <h2 class="section-title">Ready to Close the Gap &amp; <em style="color:var(--accent-light);">Unlock the Next Level?</em></h2>
       <p>Book a free 30-minute call to talk about where you are, what you're navigating, and how we can help.</p>
 
       <div class="contact-cta-wrap">
