@@ -438,3 +438,118 @@ footer { background: #060F1D; padding: 1.2rem 6%; }
     <div class="about-photo-col reveal">
       <div class="about-photo-wrap">
         <img src="headshot.JPG" alt="Headshot">
+        <div class="about-photo-frame"></div>
+        <div class="about-photo-accent"></div>
+      </div>
+      <div class="credentials" style="margin-top: 1.2rem; justify-content: center;">
+        <span class="cred-tag">Deloitte</span>
+        <span class="cred-tag">UCLA MBA</span>
+        <span class="cred-tag">Founder</span>
+        <span class="cred-tag">FP&amp;A</span>
+      </div>
+    </div>
+    <div class="about-text-col reveal">
+      <div class="section-label">About</div>
+      <p class="about-name">Ania Ohanesian</p>
+      <h2 class="about-title-line">Former Deloitte Auditor<br>Turned Fractional CFO</h2>
+      <div class="divider"></div>
+      <div class="about-bio">
+        <p>I founded <strong>Infinite Insights</strong> when I realized that I am deeply passionate and naturally skilled in finance &amp; accounting, which happens to be many business owners' worst nightmare. While some people hate the idea of spending their days staring at spreadsheet after spreadsheet, I consider Excel my best friend — and I built a business around it.</p>
+        <p>I've always been passionate about helping others understand complex topics and breaking them down into simple, digestible components. When I realized that finances are one of the key areas keeping businesses from reaching their full potential, my goal became clear: <strong>partner with companies to clear the financial roadblocks and help them get to the next level.</strong></p>
+        <p>I received a B.A. in <strong>Economics and Accounting</strong> and a certification in <strong>Technology Management</strong> from UC Santa Barbara. When I graduated in 2022, I was one of six individuals — and the only woman — to graduate with distinction in the major, placing in the top 1% of my class. During my time at university, I co-founded a startup and was among the top 3 ventures to win the <strong>USD V2 Pitch Competition</strong>.</p>
+        <p>After I graduated, I spent three years in <strong>Big 4 accounting</strong> as a lead senior across private and public engagements. While at <strong>Deloitte</strong>, I had the opportunity to work with complex clients from diverse industries and sizes, that, although challenging, were instrumental in catapulting my professional growth and the technical depth and financial rigor I carry into every engagement today.</p>
+        <p>I then moved to the industry side as a <strong>Senior Financial Analyst</strong> for a diversified manufacturing company, sharpening my financial planning, analysis, and operational skills from the inside. I'm currently completing my <strong>MBA at UCLA Anderson</strong>, which has expanded both my network and my practice. Today I consult with growth-stage companies as a strategic financial partner — identifying opportunities for growth and leading the execution.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── EXPERIENCE ── -->
+<section id="who" style="background: var(--warm-white); padding: 70px 6% 70px;">
+  <div class="who-inner section-inner">
+    <div class="industries-section reveal">
+      <p class="industries-label">Industry Experience</p>
+      <div class="industries-grid" style="grid-template-columns: 1fr 1fr; grid-auto-flow: column; grid-template-rows: repeat(5, auto);">
+        <span class="industry-tag">Healthcare &amp; Life Sciences</span>
+        <span class="industry-tag">Technology &amp; SaaS</span>
+        <span class="industry-tag">Consumer Goods</span>
+        <span class="industry-tag">Retail &amp; E-Commerce</span>
+        <span class="industry-tag">Logistics &amp; Supply Chain</span>
+        <span class="industry-tag">Diversified Manufacturing</span>
+        <span class="industry-tag">Real Estate</span>
+        <span class="industry-tag">Building Materials</span>
+        <span class="industry-tag">Hospitality</span>
+        <span class="industry-tag">Aerospace &amp; Defense</span>
+      </div>
+    </div>
+    <div class="industries-section reveal" style="margin-top: 3rem;">
+      <p class="industries-label">Client Experience</p>
+      <div class="industries-grid" style="grid-template-columns: 1fr 1fr; grid-auto-flow: column; grid-template-rows: repeat(3, auto);">
+        <span class="industry-tag">Pre-IPO</span>
+        <span class="industry-tag">Multi-Entity</span>
+        <span class="industry-tag">Global Subsidiaries</span>
+        <span class="industry-tag">Emerging Growth Companies</span>
+        <span class="industry-tag">First-Year Compliance Cycles</span>
+        <span class="industry-tag">Multi-Year Restatements</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CONTACT ── -->
+<section id="contact">
+  <div class="contact-inner">
+    <div class="contact-top reveal">
+      <div class="section-label">Let's Talk</div>
+      <h2 class="section-title">Ready to Close the Gap &amp; <em style="color:var(--accent-light);">Unlock the Next Level?</em></h2>
+      <p>Book a free 30-minute call to talk about where you are, what you're navigating, and how we can help.</p>
+
+      <div class="contact-cta-wrap">
+        <a href="https://calendly.com/infiniteinsightscfo/30min" target="_blank" class="btn-calendly">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Book Your Free Call
+        </a>
+      </div>
+      <p class="contact-note">or email us at <a href="mailto:ania@infiniteinsightscfo.com" style="color: rgba(255,255,255,0.45); text-decoration: none; border-bottom: 1px solid rgba(255,255,255,0.2);">ania@infiniteinsightscfo.com</a></p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="footer-inner">
+    <span class="footer-logo">Infinite Insights</span>
+    <span class="footer-copy">© 2025 All rights reserved.</span>
+  </div>
+</footer>
+
+<script>
+// Scroll reveal
+const reveals = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry, i) => {
+    if (entry.isIntersecting) {
+      setTimeout(() => entry.target.classList.add('visible'), i * 80);
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.08 });
+reveals.forEach(el => observer.observe(el));
+
+// Nav scroll
+window.addEventListener('scroll', () => {
+  document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 30);
+});
+
+// Smooth anchor scroll
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', function(e) {
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+  });
+});
+</script>
+</body>
+</html>
